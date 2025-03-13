@@ -1,0 +1,115 @@
+:root {
+    --background: white;
+    --theme_toggle-background: #dddddd;
+    --theme_toggle-width-bottom: 80px;
+    --theme_toggle-width-svg: 25px;
+    --theme_toggle-height-bottom: 40px;
+    --theme_toggle-border-radius: 15px;
+}
+
+[data-theme="dark"] {
+    --background: #2C2C2F;
+    --theme_toggle-background: #1F1F21;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+body {
+    background: var(--background);
+    transition: background 0.5s;
+}
+
+.theme_toggle input {
+    display: none;
+}
+
+.theme_toggle .display {
+    width: var(--theme_toggle-width-bottom);
+    height: var(--theme_toggle-height-bottom);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+
+label {
+    width: var(--theme_toggle-width-bottom);
+    height: var(--theme_toggle-height-bottom);
+    border-radius: var(--theme_toggle-border-radius);
+    background: var(--theme_toggle-background);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
+    cursor: pointer;
+    position: relative;
+}
+
+.circle {
+    width: calc(var(--theme_toggle-height-bottom) - 5%);
+    height: calc(var(--theme_toggle-height-bottom) - 10%);
+    border-radius: 99px;
+    background: var(--background);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05), -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
+    position: absolute;
+    top: 50%;
+    left: -1%;
+    transform: translate(10%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+svg {
+    width: var(--theme_toggle-width-svg);
+    position: absolute;
+}
+
+.sun {
+    color: yellow;
+    margin-top: 0%;
+    opacity: 1;
+}
+
+.moon {
+    margin-top: -150%;
+    color: white;
+    opacity: 0;
+}
+
+.dark {
+    background: var(--background-dark); /* Темная тема */
+}
+
+input[type=checkbox]:checked + .display label {
+    background: var(--theme_toggle-background);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5) inset;
+}
+
+input[type=checkbox]:checked + .display label .circle {
+    left: 100%;
+    transform: translate(-110%, -50%);
+    background: var(--background-dark);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
+}
+
+input[type=checkbox]:checked + .display label .circle .sun {
+    margin-top: 150%;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked + .display label .circle .moon {
+    margin-top: 0%;
+    opacity: 1;
+}
+
+input[type=checkbox]:checked ~ body {
+    background: var(--background-dark);
+}
+
+label:active .circle {
+    width: calc(var(--theme_toggle-width-bottom) - 10%);
+}
