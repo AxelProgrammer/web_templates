@@ -1,0 +1,58 @@
+:root {
+  --color-background: #4e4f54;
+  --color-text: #d1d1d9;
+  --color-button-gradient-start: #6e7078;
+  --color-button-gradient-end: #515156;
+  --color-button-hover-gradient-start: #7e7e86;
+  --color-button-hover-gradient-end: #46474c;
+  --color-button-active-gradient-start: #4c4d52;
+  --color-button-active-gradient-end: #38393e;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow-dark: rgba(0, 1, 6, 0.5);
+  --color-shadow-light: rgba(255, 255, 255, 0.2);
+  --color-shadow-active: rgba(0, 0, 0, 0.5);
+  --color-shadow-active-light: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+a.button_download {
+  position: relative;
+  display: inline-block;
+  font-size: 90%;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  text-shadow: 0 -1px 2px var(--color-shadow);
+  padding: .5em 1em;
+  outline: none;
+  border-radius: 3px;
+  background: linear-gradient(var(--color-button-gradient-start), var(--color-button-gradient-end)) var(--color-button-gradient-start);
+  box-shadow:
+      0 1px var(--color-shadow-light) inset,
+      0 3px 5px var(--color-shadow-dark),
+      0 0 1px 1px var(--color-shadow);
+  transition: .2s ease-in-out;
+}
+
+a.button_download:hover:not(:active) {
+  background: linear-gradient(var(--color-button-hover-gradient-start), var(--color-button-hover-gradient-end)) var(--color-button-hover-gradient-start);
+}
+
+a.button_download:active {
+  top: 1px;
+  background: linear-gradient(var(--color-button-active-gradient-start), var(--color-button-active-gradient-end)) var(--color-button-active-gradient-start);
+  box-shadow:
+      0 0 1px var(--color-shadow-active) inset,
+      0 2px 3px var(--color-shadow-active) inset,
+      0 1px 1px var(--color-shadow-active-light);
+}
