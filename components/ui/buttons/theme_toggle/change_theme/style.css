@@ -1,0 +1,76 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+	font-family: "Inter", sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	color: #b4bcd0;
+	background-color: #18181b;
+}
+
+/* --------------------------------------------------- */
+:root {
+	--color-text-primary: rgb(180, 188, 208);
+	--color-text-secondary: rgb(255, 255, 255);
+	--color-background-primary: rgb(24, 24, 27);
+	--color-background-secondary: rgb(34, 35, 38);
+	--shadow-alpha: 0.25;
+	--spinner: var(--color-accent);
+
+	:has(.theme-toggle input:checked) {
+		--color-text-primary: rgb(105, 105, 105);
+		--color-text-secondary: rgb(0, 0, 0);
+		--color-background-primary: rgb(242, 247, 249);
+		--color-background-secondary: rgb(255, 255, 255);
+		--shadow-alpha: 0.025;
+		--spinner: var(--color-accent);
+	}
+}
+
+body {
+	color: var(--color-text-primary);
+	background-color: var(--color-background-primary);
+}
+
+.theme-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	border-radius: 99em;
+	background-color: var(--color-background-secondary);
+	padding: 0.375em 1em;
+	cursor: pointer;
+	user-select: none;
+
+	&:hover {
+		color: var(--color-text-secondary);
+	}
+
+	&:has(input:focus-visible) {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 4px;
+	}
+
+	i {
+		flex-shrink: 0;
+	}
+	input {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+}
+/* --------------------------------------------------- */
