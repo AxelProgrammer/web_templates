@@ -72,4 +72,4 @@ web_templates/
    git push origin feature/AmazingFeature
 
 ## Лицензия
-Этот проект распространяется под лицензией MIT. Подробнее см. в файле LICENSE.
+Этот проект распространяется под лицензией CC0 1.0 Universal. Подробнее см. в файле LICENSE.
