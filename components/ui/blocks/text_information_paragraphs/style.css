@@ -1,0 +1,43 @@
+p {
+  margin: 0;
+}
+
+.notice-block.info {
+  display: flex;
+  background-color: #e6f3ff;
+  border-left: 4px solid #2383e2;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.notice-block.attention {
+  display: flex;
+  background-color: #ffe6e6;
+  border-left: 4px solid #d73a49;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.notice-block.clue {
+  display: flex;
+  background-color: #ffffe6;
+  border-left: 4px solid #d7c73a;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.notice-block .icon {
+  margin-right: 8px;
+}

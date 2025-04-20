@@ -23,6 +23,8 @@
 web_templates/  
 ├── components/  
 │ ├── ui/  
+| | ├──blocks/
+│ │ | └──text_information_paragraphs/ # Абзац в стиле yonote
 │ │ ├── buttons/  
 │ │ │ ├── theme_toggle/ # Кнопки переключения темы  
 │ │ │ ├── installation_button/ # Кнопка для установки  
